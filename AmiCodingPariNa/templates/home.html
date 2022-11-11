@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Profile Page {% endblock title %}
+
+
+{% block content %}
+<div>
+    <h2> Khoj The Search</h2>
+    <form action="" id="register" method="POST" novalidate>
+       {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}} <br>
+        {{fm}} <br> {% if fm.errors %}<span class="errorlist">{{fm.errors|striptags}}</span> <br>{% endif %} <br> 
+        {% endfor %}
+
+        {% if result %}
+        <h3> Result:  {{result}}  </h3><br>
+        {% endif %}
+
+        <input type="submit" value="SEARCH" name="submit" id="submit">
+    </form>
+
+
+    
+</div>
+{% endblock content %}

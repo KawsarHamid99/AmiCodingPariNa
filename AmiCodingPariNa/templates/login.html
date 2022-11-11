@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login  {% endblock title %}
+
+
+{% block content %}
+<div>
+    <h2> Log In</h2>
+    <form action="" id="register" method="post" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}} <br>
+        {{fm}} <br> {% if fm.errors %}<span class="errorlist">{{fm.errors|striptags}}</span> <br>{% endif %} <br> 
+        {% endfor %}
+
+        <input type="submit" value="Submit" name="submit" id="submit">
+    </form>
+      <p>Click <a href="{% url 'signup' %}">Here</a>  to Sign Up  </p>
+
+    
+</div>
+{% endblock content %}
