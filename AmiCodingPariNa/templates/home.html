@@ -7,6 +7,11 @@
 {% block content %}
 <div>
     <h2> Khoj The Search</h2>
+    {% if messages %}
+        {% for message in messages %}
+        <span style="text-align: center;padding-left:40px;font-family: sans-serif;">{{message}}</span>
+        {%  endfor  %}
+    {% endif %}
     <form action="" id="register" method="POST" novalidate>
        {% csrf_token %}
         {% for fm in form %}
@@ -20,6 +25,7 @@
 
         <input type="submit" value="SEARCH" name="submit" id="submit">
     </form>
+    <p style="background-color: rgb(44, 54, 51);" >Click <a style="color:rgb(13, 152, 0);" href="{% url 'logout' %}">Here</a>  to Log out  </p>
 
 
     

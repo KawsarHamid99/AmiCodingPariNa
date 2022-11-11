@@ -47,7 +47,8 @@
 3. ### Create Database and User
     sqlite database has been used here
 
-4. ### Configure the project
+4. ### Show Api Data
+    - run myapi.py to show all the data 
     
 
 5. ### Run the project

@@ -19,6 +19,11 @@ h2{
   padding-top:20px;
   font-family: sans-serif;
 }
+span{
+  text-align: center;
+  padding-top:20px;
+  font-family: sans-serif;
+}
 
 div.register{
   background-color: rgba(0,0,0,0.5);

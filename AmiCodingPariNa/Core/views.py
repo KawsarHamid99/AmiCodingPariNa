@@ -5,7 +5,7 @@ from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpResponse,JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .serializers import StudentSerializers
+
 from django.shortcuts import render,HttpResponseRedirect
 from .forms import SignupForm,LoginForm,KhojTheSearchForm
 from django.contrib.auth import authenticate,login,logout
@@ -14,6 +14,7 @@ from django.contrib import messages
 from .models import Payload
 from django.contrib.auth.models import User
 import datetime
+from django.contrib import messages
 
 
 # Create Signup Function for Signup.
@@ -22,6 +23,8 @@ def Signup(request):
         fm=SignupForm(request.POST)
         if fm.is_valid():
             fm.save()
+            messages.success(request,"Registration has been completed...")
+        return HttpResponseRedirect("/")
     else:
         fm=SignupForm()
     return render(request,"signup.html",{"form":fm})
